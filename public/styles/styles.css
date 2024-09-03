@@ -1,0 +1,7 @@
+.lead {
+    word-wrap: break-word; /* Ensures long words break and wrap */
+    overflow-wrap: break-word; /* Ensures compatibility */
+    overflow: hidden; /* Hides overflow */
+    text-overflow: ellipsis; /* Adds '...' to clipped text */
+    max-width: 100%; /* Ensures the element doesn't exceed its container */
+}

@@ -1,0 +1,46 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <div class="px-4 py-5 mt-5 text-center">
+        <h1 class="display-5 fw-bold text-body-emphasis">What do you need to do?</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Welcome to MyOwnList website. Here you can write temporary list, that will disappear by the end your browsing season.</p>
+          <h2 class="display-10 fw-bold text-body-emphasis mt-5">Start typing your list items!</h2>
+        </div>
+    </div>
+    <div class="container col-6">
+        <div class="form-group">
+            <form action="/submit" method="POST">
+                <textarea class="form-control" id="Textarea" rows="10" name="list-post"></textarea>
+                <p>write up to 500 characters</p>
+                <div class="d-grid d-sm-flex justify-content-sm-center">
+                    <button name="submitBtn" type="submit" class="btn btn-primary mt-3">Submit</button>
+                </div>
+                <% if(locals.flag) { %>
+                    <p class="text-danger">YOU ENTERED MORE THAN 500 CHARACTERS</p>
+                <% } %>
+            </form>
+        </div>
+    </div>
+    <% if(locals.lists) { %>
+        <% for(var i = 0; i < lists.length; i++) { %>
+            <div class="px-4 pb-2 text-left">
+                <div class="col-lg-6 mx-auto">
+                    <h5> List item num <%=i + 1%>:</h5>
+                    <div class="d-grid gap-2 d-sm-flex">
+                        <form action="/edit" method="GET">
+                            <button type="submit" class="btn btn-outline-primary my-2" name="editBlog">Edit</button>
+                            <input type="hidden" name="buttonId" value="<%=i%>">
+                        </form>
+                        <form action="/delete" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-outline-light my-2" name="deleteBlog">Delete</button>
+                            <input type="hidden" name="buttonDeleteId" value="<%=i%>">
+                        </form>
+                    </div>
+                  <p class="lead border rounded p-2" id="listNum<%=i%>"><%= lists[i] %></p>
+                </div>
+            </div>
+        <% } %>
+    <% } %>
+    </div>
+<%- include("partials/footer.ejs") %>

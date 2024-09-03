@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <div class="px-4 pb-2 mt-5 text-left">
+        <div class="col-lg-6 mx-auto">
+            <div class="form-group">
+                <form action="/update" method="POST">
+                    <input type="hidden" name="_method" value="PATCH">
+                    <h5>Edit your list item:</h5>
+                    <textarea class="form-control" id="Textarea" rows="10" name="list-post"><%= listToUpdate %></textarea>
+                    <p>You can write up to 500 characters.</p>
+                    <button type="submit" class="btn btn-outline-primary my-2" name="editBlog">Save</button>
+                    <input type="hidden" name="blogIndex" value="<%= id %>">
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include("partials/footer.ejs") %>
