@@ -24,7 +24,7 @@ MyOwnList is a simple web application that allows users to create temporary list
 
 3. Start the server:
     ```bash
-    npm start
+    node index.js
     ```
 
 4. Open your browser and navigate to `http://localhost:3000`.
