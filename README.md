@@ -13,7 +13,7 @@ MyOwnList is a simple web application that allows users to create temporary list
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/MyOwnList.git
+    git clone https://github.com/eliorabaev/MyOwnList.git
     cd MyOwnList
     ```
 
