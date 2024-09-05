@@ -13,8 +13,8 @@ MyOwnList is a simple web application that allows users to create temporary list
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/eliorabaev/MyOwnList.git
-    cd MyOwnList
+    git clone https://github.com/eliorabaev/express.js.git
+    cd express.js
     ```
 
 2. Install the dependencies:
